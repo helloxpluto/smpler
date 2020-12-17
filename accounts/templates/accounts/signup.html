@@ -1,4 +1,4 @@
-{% extends "elephant/base.html" %} {% block content %}
+{% extends "smpler/base.html" %} {% block content %}
 
 <form method="post" action="{% url 'signup' %}">
     {% csrf_token %} {{form.as_p}}

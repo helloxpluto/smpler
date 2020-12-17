@@ -8,10 +8,10 @@
             <a href="{% url 'sample_detail' pk=sample.pk %}">{{sample.item}}<a>
         </h3>
     </li>
-    <a href="{% url 'sample_delete' pk=sample.pk %}">DELETE</a>
+    <a href="">DELETE</a>
     {% endfor %}
 </ul>
 <h1>New Sample</h1>
-<h3><a href="{% url 'sample_save' %}"> Add A New Sample</a></h3>
+<h3><a href="{% url 'upload' %}"> Add A New Sample</a></h3>
 <p>hello</p>
 {% endblock %}
