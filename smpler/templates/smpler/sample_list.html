@@ -1,0 +1,17 @@
+{% extends 'smpler/base.html'%}
+
+{% block content %}
+<ul>
+    {% for sample in samples %}
+    <li>
+        <h3>
+            <a href="{% url 'sample_detail' pk=sample.pk %}">{{sample.item}}<a>
+        </h3>
+    </li>
+    <a href="{% url 'sample_delete' pk=sample.pk %}">DELETE</a>
+    {% endfor %}
+</ul>
+<h1>New Sample</h1>
+<h3><a href="{% url 'sample_save' %}"> Add A New Sample</a></h3>
+<p>hello</p>
+{% endblock %}

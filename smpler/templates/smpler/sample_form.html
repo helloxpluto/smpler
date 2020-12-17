@@ -1,0 +1,10 @@
+{% extends 'smpler/base.html'%}
+
+{% block content %}
+<h1>New Sample</h1>
+<form method="POST" class="sample-form">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">SAVE</button>
+</form>
+<p>load up a sample</p>
+{% endblock %}

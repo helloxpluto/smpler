@@ -1,0 +1,13 @@
+{% extends 'smpler/base.html'%}
+
+{% block content %}
+<h1>upload Sample</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="sample">
+    <button type="submit" class="save btn btn-default">SAVE</button>
+</form>
+{% if url %}
+    <p>uploded file: <a href="{{ url }}">{{ url }}</a></p>
+{% endif %}
+{% endblock %}
