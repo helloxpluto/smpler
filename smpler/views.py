@@ -20,7 +20,7 @@ def sample_detail(request, pk):
 
 def sample_play(request, playsound, pk):
     sample = Sample.objects.get(id=pk)
-    return playsound('sample_play', pk=sample.pk)
+    return playsound(sample.sound, pk=sample.pk)
 
 
 
@@ -55,3 +55,8 @@ def upload(request):
         name = fs.save(uploaded_file.name, uploaded_file)
         context['url'] = fs.url(name)
     return render(request, 'smpler/upload.html', context)
+
+
+def delete_sample(request, pk):
+    Sample.objects.get(id=pk).delete()
+    return redirect('/')

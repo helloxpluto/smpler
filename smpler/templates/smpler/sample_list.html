@@ -1,17 +1,20 @@
 {% extends 'smpler/base.html'%}
-
 {% block content %}
-<ul>
+{% load static%}
+<link rel="stylesheet" href="{% static 'css/sample_list.css' %}">
+<div class="box-container">
+<ul class="box">
     {% for sample in samples %}
-    <li>
-        <h3>
-            <a href="">{{sample.title}}<a>
-        </h3>
+    <li class="list-item">
+        <div class="list-box">
+            <button href="{% url 'edit_sample' pk=sample.pk %}">EDIT</button>
+            <button href="{% url 'delete_sample' pk=sample.pk %}">DELETE</button>
+            <p class="sample-name">{{sample.title}}<p>
+        </div>
     </li>
-    <a href="">DELETE</a>
     {% endfor %}
 </ul>
-<h1>New Sample</h1>
-<h3><a href="{% url 'upload_sample' %}"> Add A New Sample</a></h3>
-<p>hello</p>
+</div>
+
+<a href="{% url 'upload_sample' %}"> Add A New Sample</a>
 {% endblock %}

@@ -1,6 +1,7 @@
 {% load static%}
 <html>
     <link rel="stylesheet" href="{% static 'css/smpler.css' %}">
+
 <nav>
     <a href="/">HOME</a> 
     <div class="user-info">
@@ -14,7 +15,9 @@
         </div>
 </nav>
 <body>
+    <div>
 
-    {% block content %} {% endblock %}
+      {% block content %} {% endblock %}  
+    </div>  
 </body>
 </html>
