@@ -1,1 +1,1 @@
-web: gunicorn smpler.wsgi
+web: gunicorn smpler_proj.wsgi
