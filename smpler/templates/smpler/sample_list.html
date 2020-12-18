@@ -10,7 +10,7 @@
             <a class="a1" href="{% url 'edit_sample' pk=sample.pk %}">EDIT</a>
             <a class="a1" href="{% url 'delete_sample' pk=sample.pk %}">DELETE</a>
             <br/>
-            <a class="a1" href="{% url 'sample_play' pk=sample.pk %}">{{sample.title}}</a>
+            <a class="a1" href="{{sample.url}}">{{sample.title}}</a>
 
         </div>
     </li>
@@ -19,4 +19,4 @@
 </div>
 
 <a class="a2" href="{% url 'upload_sample' %}"> Add A New Sample</a>
-{% endblock %}
+{% endblock %}                                        qqqqaaaaaaaaaaaaaa

@@ -7,9 +7,9 @@
 
 <h3>New Sample</h3>
 <form method="POST" enctype="multipart/form-data" class="sample-form">
-    {% csrf_token %} {{ form.as_p }}
+    {% csrf_token %}
     <button type="submit" class="save btn btn-default">SAVE</button>
 </form>
-<p>load up a sample</p>
+<p class="test">load up a sample</p>
 </div>
 {% endblock %}

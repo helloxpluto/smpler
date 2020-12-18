@@ -25,6 +25,7 @@ def sample_play(request, playsound, pk):
 
 
 def upload_sample(request):
+    context = {}
     if request.method == 'POST':
         form = SampleForm(request.POST, request.FILES)
         if form.is_valid():
