@@ -3,6 +3,6 @@ body {
 	display: flex;
     flex-direction: column;
     background-image: url(smp.png);
-    background-size:cover
+    background-size: 77%;
     
 }
