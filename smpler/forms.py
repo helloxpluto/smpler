@@ -7,6 +7,4 @@ class SampleForm(forms.ModelForm):
 
     class Meta:
         model = Sample
-        fields = ('title', 'artist', 'sound')
-
-
+        fields = ('title', 'artist', 'sound', 'url')
