@@ -20,11 +20,44 @@ def sample_detail(request, pk):
 
 def sample_play(request, playsound, pk):
     sample = Sample.objects.get(id=pk)
-    return playsound('sample_play', pk=sample.pk)
+    return render(request, playsound(sample.sound))
+
+
+
+def upload_sample(request):
+    context = {}
+    if request.method == 'POST':
+        form = SampleForm(request.POST, request.FILES)
+        if form.is_valid():
+            sample = form.save()
+            return redirect('/', pk=sample.pk)
+    else:
+        form = SampleForm()
+    return render(request, 'smpler/sample_form.html', {'form': form})
+
+
+def edit_sample(request, pk):
+    sample = Sample.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = SampleForm(request.POST, instance=sample)
+        if form.is_valid():
+            sample = form.save()
+            return redirect('/', pk=sample.pk)
+    else:
+        form = SampleForm(instance=Sample)
+    return render(request, 'smpler/sample_form.html', {'form': form})
+
 
 def upload(request):
+    context = {}
     if request.method == 'POST':
         uploaded_file = request.FILES['sample']
         fs = FileSystemStorage()
-        fs.save(uploaded_file.name, uploaded_file)
-    return render(request, 'smpler/upload.html')
+        name = fs.save(uploaded_file.name, uploaded_file)
+        context['url'] = fs.url(name)
+    return render(request, 'smpler/upload.html', context)
+
+
+def delete_sample(request, pk):
+    Sample.objects.get(id=pk).delete()
+    return redirect('/')

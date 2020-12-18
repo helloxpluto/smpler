@@ -1,0 +1,58 @@
+
+
+.box {
+    display: grid;
+    flex-direction: column;
+	grid-template-columns: 12rem 12rem 12rem 12rem;
+    grid-template-rows: 7rem 7rem 7rem;
+    justify-content: center;
+    padding-right: 2rem;
+    margin-top: 11rem;
+    margin-bottom: 5rem;
+
+   
+}
+
+.box-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(smp.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 77%;
+    height: 37rem;
+    margin-bottom: 3rem;
+    width: 87rem;
+    min-width: 87rem;
+}
+
+.list-item {
+    margin: 4px;
+    background-color: rgb(173, 168, 146);
+    border: rgb(136, 132, 117);
+    border-style:groove;
+    border-width: 6px;
+    border-color: rgba(66, 54, 35, 0.363);
+    box-shadow: 1px 7px 7px 1px rgba(43, 41, 35, 0.842);
+}
+
+.list-item:active {
+	background-color: rgb(167, 160, 136);
+	color: rgb(102, 99, 104);
+    transform: scale(-15%);
+    box-shadow: 1px 5px 5px 1px rgba(49, 47, 39, 0.842);
+}
+
+.list-box {
+    padding: 8px;
+
+}
+
+li {
+    list-style: none;
+}
+
+.test {
+    font-size: 100px;
+}

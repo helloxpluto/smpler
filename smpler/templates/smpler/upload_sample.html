@@ -1,0 +1,15 @@
+{% extends 'smpler/base.html'%}
+{% block content %}
+{% load static%}
+<link rel="stylesheet" href="{% static 'css/upload_sample.css' %}">
+<div class='form-container'>
+<h1>UPLOAD SAMPLES</h1>
+
+<h3>New Sample</h3>
+<form method="POST" enctype="multipart/form-data" class="sample-form">
+    {% csrf_token %}
+    <button type="submit" class="save btn btn-default">SAVE</button>
+</form>
+<p class="test">load up a sample</p>
+</div>
+{% endblock %}
