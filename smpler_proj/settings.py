@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'smpler',
     'accounts',
     'playsound',
-    'soundfile',
     'corsheaders',
 ]
 
