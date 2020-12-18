@@ -7,14 +7,16 @@
     {% for sample in samples %}
     <li class="list-item">
         <div class="list-box">
-            <button href="{% url 'edit_sample' pk=sample.pk %}">EDIT</button>
-            <button href="{% url 'delete_sample' pk=sample.pk %}">DELETE</button>
-            <p class="sample-name">{{sample.title}}<p>
+            <a class="a1" href="{% url 'edit_sample' pk=sample.pk %}">EDIT</a>
+            <a class="a1" href="{% url 'delete_sample' pk=sample.pk %}">DELETE</a>
+            <br/>
+            <a class="a1" href="{% url 'sample_play' pk=sample.pk %}">{{sample.title}}</a>
+
         </div>
     </li>
     {% endfor %}
 </ul>
 </div>
 
-<a href="{% url 'upload_sample' %}"> Add A New Sample</a>
+<a class="a2" href="{% url 'upload_sample' %}"> Add A New Sample</a>
 {% endblock %}

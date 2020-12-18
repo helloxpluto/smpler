@@ -20,7 +20,7 @@ def sample_detail(request, pk):
 
 def sample_play(request, playsound, pk):
     sample = Sample.objects.get(id=pk)
-    return playsound(sample.sound, pk=sample.pk)
+    return render(request, playsound(sample.sound))
 
 
 

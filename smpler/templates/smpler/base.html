@@ -1,9 +1,12 @@
 {% load static%}
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+</style>
 <html>
     <link rel="stylesheet" href="{% static 'css/smpler.css' %}">
 
 <nav>
-    <a href="/">HOME</a> 
+    <a class="smpler" href="/">smpler</a> 
     <div class="user-info">
         {% if user.is_authenticated %} Welcome, {{ user.username }}
         <a href="{% url 'logout' %}">Log out</a>
